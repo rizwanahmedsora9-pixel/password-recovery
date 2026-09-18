@@ -1,0 +1,72 @@
+# Keeps README.md fresh automatically.
+#
+# Triggers:
+#   - Every time a PR is opened / closed / reopened / marked ready for review
+#     (this is the main "update on every new PR" behaviour)
+#   - Every push to the default branch (backup)
+#   - Once a day on a schedule (backup)
+#   - Manually via "Run workflow" (workflow_dispatch)
+#
+# What it does:
+#   1. Checks out the default branch
+#   2. Runs .github/scripts/update_readme.py, which regenerates the sections
+#      between the <!-- ...:START --> / <!-- ...:END --> markers in README.md
+#   3. Commits and pushes the result back to the default branch (if changed)
+
+name: Auto-update README
+
+on:
+  pull_request_target:
+    types: [opened, closed, reopened, ready_for_review]
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 0 * * *" # daily backup, just in case an event was missed
+  workflow_dispatch:
+
+# Serialise runs so two PR events can't push conflicting README commits.
+concurrency:
+  group: update-readme
+  cancel-in-progress: false
+
+permissions:
+  contents: write # needed to push the updated README back
+  pull-requests: read # needed to list PRs
+
+jobs:
+  update-readme:
+    name: Refresh README dynamic sections
+    runs-on: ubuntu-latest
+    # Never react to our own bot commits — prevents infinite loops.
+    if: github.actor != 'github-actions[bot]'
+    steps:
+      - name: Check out default branch
+        uses: actions/checkout@v4
+        with:
+          # Always update the README on the default branch,
+          # no matter which branch the PR comes from.
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Regenerate README sections
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python3 .github/scripts/update_readme.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          if git diff --staged --quiet; then
+            echo "README already up to date — nothing to commit."
+          else
+            git commit -m "docs: auto-update README with latest PRs [skip ci]"
+            git pull --rebase origin "${{ github.event.repository.default_branch }}" || true
+            git push origin HEAD:"${{ github.event.repository.default_branch }}"
+          fi
