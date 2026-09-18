@@ -66,21 +66,23 @@ Every PR automatically refreshes the live sections below. ✨
 <!-- PR-STATS:START -->
 | 📊 Metric | Count |
 |---|---|
-| Total pull requests | **0** |
-| 🟢 Open | 0 |
+| Total pull requests | **1** |
+| 🟢 Open | 1 |
 | 🟣 Merged | 0 |
 | 🔴 Closed (unmerged) | 0 |
 | ⭐ Stars | 0 |
 | 🍴 Forks | 0 |
-| 🐞 Open issues | 0 |
+| 🐞 Open issues | 1 |
 <!-- PR-STATS:END -->
 
 ### 🆕 Recent pull requests _(auto-updated)_
 
 <!-- RECENT-PRS:START -->
-_No pull requests yet — be the first to open one! 🎉_
+| PR | Title | Author | Status | Created | Last updated |
+|---|---|---|---|---|---|
+| [#1](https://github.com/rizwanahmedsora9-pixel/password-recovery/pull/1) | [Add self-updating README (auto-refreshes on every PR)](https://github.com/rizwanahmedsora9-pixel/password-recovery/pull/1) | [@arena-ai-coding-agent[bot]](https://github.com/arena-ai-coding-agent[bot]) | 🟢 Open | 2026-09-18 | 2026-09-18 |
 
-[Open a pull request](https://github.com/rizwanahmedsora9-pixel/password-recovery/compare)
+_Showing the 1 most recently updated PRs. [View all](https://github.com/rizwanahmedsora9-pixel/password-recovery/pulls)_
 <!-- RECENT-PRS:END -->
 
 ### 👥 Contributors _(auto-updated)_
@@ -94,7 +96,7 @@ _No pull requests yet — be the first to open one! 🎉_
 <!-- CONTRIBUTORS:END -->
 
 <!-- LAST-UPDATED:START -->
-_Last updated: **2026-09-18 05:58 UTC** — this README refreshes itself automatically on every pull request via the [Auto-update README](https://github.com/rizwanahmedsora9-pixel/password-recovery/actions/workflows/update-readme.yml) workflow._
+_Last updated: **2026-09-18 05:59 UTC** — this README refreshes itself automatically on every pull request via the [Auto-update README](https://github.com/rizwanahmedsora9-pixel/password-recovery/actions/workflows/update-readme.yml) workflow._
 <!-- LAST-UPDATED:END -->
 
 ---
