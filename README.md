@@ -82,7 +82,7 @@ Every PR automatically refreshes the live sections below. ✨
 |---|---|---|---|---|---|
 | [#1](https://github.com/rizwanahmedsora9-pixel/password-recovery/pull/1) | [Add self-updating README (auto-refreshes on every PR)](https://github.com/rizwanahmedsora9-pixel/password-recovery/pull/1) | [@arena-ai-coding-agent[bot]](https://github.com/arena-ai-coding-agent[bot]) | 🟢 Open | 2026-09-18 | 2026-09-18 |
 
-_Showing the 1 most recently updated PRs. [View all](https://github.com/rizwanahmedsora9-pixel/password-recovery/pulls)_
+_Showing the 1 most recently updated PR. [View all](https://github.com/rizwanahmedsora9-pixel/password-recovery/pulls)_
 <!-- RECENT-PRS:END -->
 
 ### 👥 Contributors _(auto-updated)_
@@ -106,9 +106,9 @@ _Last updated: **2026-09-18 05:59 UTC** — this README refreshes itself automat
 This README contains **live sections** (stats, recent PRs, contributors, timestamp) delimited by HTML comment markers such as:
 
 ```html
-<!-- RECENT-PRS:START -->
+<!-- SECTION-NAME:START -->
 ...generated content...
-<!-- RECENT-PRS:END -->
+<!-- SECTION-NAME:END -->
 ```
 
 The [`Auto-update README`](.github/workflows/update-readme.yml) GitHub Actions workflow:

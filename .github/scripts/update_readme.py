@@ -152,7 +152,8 @@ def build_recent_prs_section() -> str:
             f"| {fmt_date(pr.get('updated_at'))} |"
         )
     lines.append("")
-    lines.append(f"_Showing the {len(prs)} most recently updated PRs. "
+    noun = "PR" if len(prs) == 1 else "PRs"
+    lines.append(f"_Showing the {len(prs)} most recently updated {noun}. "
                  f"[View all](https://github.com/{REPO}/pulls)_")
     return "\n".join(lines) + "\n"
 
