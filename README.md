@@ -67,12 +67,12 @@ Every PR automatically refreshes the live sections below. ✨
 | 📊 Metric | Count |
 |---|---|
 | Total pull requests | **2** |
-| 🟢 Open | 1 |
-| 🟣 Merged | 1 |
+| 🟢 Open | 0 |
+| 🟣 Merged | 2 |
 | 🔴 Closed (unmerged) | 0 |
 | ⭐ Stars | 0 |
 | 🍴 Forks | 0 |
-| 🐞 Open issues | 1 |
+| 🐞 Open issues | 0 |
 <!-- PR-STATS:END -->
 
 ### 🆕 Recent pull requests _(auto-updated)_
@@ -80,7 +80,7 @@ Every PR automatically refreshes the live sections below. ✨
 <!-- RECENT-PRS:START -->
 | PR | Title | Author | Status | Created | Last updated |
 |---|---|---|---|---|---|
-| [#2](https://github.com/rizwanahmedsora9-pixel/password-recovery/pull/2) | [docs: full technical breakdown of the SPDT extraction artifacts](https://github.com/rizwanahmedsora9-pixel/password-recovery/pull/2) | [@arena-ai-coding-agent[bot]](https://github.com/arena-ai-coding-agent[bot]) | 🟢 Open | 2026-09-18 | 2026-09-18 |
+| [#2](https://github.com/rizwanahmedsora9-pixel/password-recovery/pull/2) | [docs: full technical breakdown of the SPDT extraction artifacts](https://github.com/rizwanahmedsora9-pixel/password-recovery/pull/2) | [@arena-ai-coding-agent[bot]](https://github.com/arena-ai-coding-agent[bot]) | 🟣 Merged | 2026-09-18 | 2026-09-18 |
 | [#1](https://github.com/rizwanahmedsora9-pixel/password-recovery/pull/1) | [Add self-updating README (auto-refreshes on every PR)](https://github.com/rizwanahmedsora9-pixel/password-recovery/pull/1) | [@arena-ai-coding-agent[bot]](https://github.com/arena-ai-coding-agent[bot]) | 🟣 Merged | 2026-09-18 | 2026-09-18 |
 
 _Showing the 2 most recently updated PRs. [View all](https://github.com/rizwanahmedsora9-pixel/password-recovery/pulls)_
@@ -91,13 +91,17 @@ _Showing the 2 most recently updated PRs. [View all](https://github.com/rizwanah
 <!-- CONTRIBUTORS:START -->
 <p align="left">
   <a href="https://github.com/arena-ai-coding-agent[bot]"><img src="https://github.com/arena-ai-coding-agent[bot].png?size=100" width="60" height="60" alt="arena-ai-coding-agent[bot]" /></a>
+  <a href="https://github.com/rizwanahmedsora9-pixel"><img src="https://github.com/rizwanahmedsora9-pixel.png?size=100" width="60" height="60" alt="rizwanahmedsora9-pixel" /></a>
+  <a href="https://github.com/github-actions[bot]"><img src="https://github.com/github-actions[bot].png?size=100" width="60" height="60" alt="github-actions[bot]" /></a>
 </p>
 
-- [@arena-ai-coding-agent[bot]](https://github.com/arena-ai-coding-agent[bot]) — 1 contribution
+- [@arena-ai-coding-agent[bot]](https://github.com/arena-ai-coding-agent[bot]) — 4 contributions
+- [@rizwanahmedsora9-pixel](https://github.com/rizwanahmedsora9-pixel) — 4 contributions
+- [@github-actions[bot]](https://github.com/github-actions[bot]) — 3 contributions
 <!-- CONTRIBUTORS:END -->
 
 <!-- LAST-UPDATED:START -->
-_Last updated: **2026-09-18 06:56 UTC** — this README refreshes itself automatically on every pull request via the [Auto-update README](https://github.com/rizwanahmedsora9-pixel/password-recovery/actions/workflows/update-readme.yml) workflow._
+_Last updated: **2026-09-18 07:01 UTC** — this README refreshes itself automatically on every pull request via the [Auto-update README](https://github.com/rizwanahmedsora9-pixel/password-recovery/actions/workflows/update-readme.yml) workflow._
 <!-- LAST-UPDATED:END -->
 
 ---
