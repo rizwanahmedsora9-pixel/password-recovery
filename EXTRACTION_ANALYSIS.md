@@ -238,16 +238,46 @@ CRLF, valid UTF-8, no BOM. Qt debug log from DeviceExtractor.
 
 | Content | Lines |
 |---|---|
-| `setStageProgress` progress spam | 24,985 |
+| `setStageProgress` lines | 24,985 |
+| — of which carry a parseable progress value | 24,965 |
+| — of which are stage state transitions | 20 |
 | Qt warnings/debug (UI noise) | 51 |
 | **Substantive events** | **51** |
 
 99.8% of the file is progress ticks. I enumerated **every distinct bracketed token** in the
-log: **29** in total — 17 `Class::method` names (`SPDT_Extractor::execute_V2`,
-`BaseExtractor::setStageProgress`, …), 6 free-function names (`calculateFileHash`,
+log: **29** in total — 15 `Class::method` names (`SPDT_Extractor::execute_V2`,
+`BaseExtractor::setStageProgress`, `SQLiteStatement::prepare`, …), 2 Qt log categories
+(`Qt::Warning`, `Qt::Debug`), 6 free-function names (`calculateFileHash`,
 `storeJsonFile`, `loadDataFromFile`, `sendMessageToOFCX`, `startJetEngineTask`,
 `prepareStudioMessage`), and 6 plain log markers (`[Enter]`, `[Leave]`, `[Success]`,
-`[Value]`, `[string]`, `[int64]`). All are accounted for in Part 1. Nothing is hiding in there.
+`[Value]`, `[string]`, `[int64]`). 15 + 2 + 6 + 6 = 29. All are accounted for in Part 1.
+Nothing is hiding in there.
+
+> **Correction, added when AFAW's log parser was written:** an earlier revision of this
+> section said "17 `Class::method` names". The total of 29 was right; that breakdown was
+> not. 15 of the qualified tokens are real `Class::method` names and the other 2 are
+> `Qt::Warning` / `Qt::Debug`, which are Qt's own log categories, not DeviceExtractor
+> methods. The split above is the accurate one, and `afaw verify` reports all four
+> counts separately.
+
+The 20 stage state transitions are the spine of the run and read well on their own.
+`afaw verify` reconstructs them as a timeline; the informative ones are:
+
+| Log time | Stage | State |
+|---|---|---|
+| 09:00:01.916 | `Stage::RunFDL` | Hidden |
+| 09:00:01.917 | `Stage::ConnectRootBoot` / `RunRootBoot` / `WaitAndroid` | Hidden |
+| 09:00:02.166 | `Stage::DeviceConnection` | WaitingManual — "Connect the device via USB in DFU mode" |
+| 09:00:10.569 | `Stage::DeviceConnection` | Completed — "Selected device: Smart 6" |
+| 09:00:10.569 | `Stage::PatchBoot` | InProgress |
+| 09:00:34.951 | `Stage::ReadFullDump` | InProgress |
+| 09:54:29.174 | `Stage::ReadFullDump` | Completed |
+| 09:54:29.174 → .239 | `Stage::CalcExtractionHashes` | InProgress → Completed (65 ms — see §8) |
+| 09:54:29.520 | `Stage::STG_ExtractHardwareKeys` | InProgress → Completed (same millisecond) |
+
+The four stages Oxygen declares but hides — `RunFDL`, `ConnectRootBoot`, `RunRootBoot`,
+`WaitAndroid` — never leave `Hidden`. That is the log's own confirmation of Part 1 §2:
+this device profile does not use the generic loader-boot path, it goes through `PatchBoot`.
 
 **Exactly one error in the entire file**, at line 25,064:
 

@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.mypy_cache/
+
+# Evidence output. Images are large and case-specific; they do not belong in Git.
+evidence/
+*.bin
+*.img
+*.tar
+custody.jsonl
+authorization.json
+
+# Reports are regenerable from the artifacts.
+report.json
+report.md
+
+# OS
+.DS_Store
+Thumbs.db

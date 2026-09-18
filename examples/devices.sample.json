@@ -1,0 +1,8 @@
+[
+  { "vid": "18d1", "pid": "4ee7", "bus": "1", "port": "3", "manufacturer": "Google", "product": "Pixel 5" },
+  { "vid": "18d1", "pid": "4ee0", "bus": "1", "port": "4", "manufacturer": "Google", "product": "Pixel 5 (bootloader)" },
+  { "vid": "05c6", "pid": "9008", "bus": "2", "port": "1", "manufacturer": "Qualcomm", "product": "HS-USB QDLoader 9008" },
+  { "vid": "1782", "pid": "4d00", "bus": "2", "port": "2", "manufacturer": "Spreadtrum", "product": "SC9863A download" },
+  { "vid": "0e8d", "pid": "0003", "bus": "3", "port": "1", "manufacturer": "MediaTek", "product": "MT6765 preloader" },
+  { "vid": "2e17", "pid": "9999", "bus": "3", "port": "2", "manufacturer": "Infinix", "product": "Smart 6" }
+]
